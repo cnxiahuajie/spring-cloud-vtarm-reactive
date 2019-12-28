@@ -8,10 +8,10 @@
         <version>2.2.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.vteam.vtarm</groupId>
-    <artifactId>spring-cloud-vtarm-article-reactive</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>spring-cloud-vtarm-article-reactive</name>
+    <groupId>com.vteam</groupId>
+    <artifactId>spring-cloud-vtarm-reactive</artifactId>
+    <version>2.0.0</version>
+    <name>spring-cloud-vtarm-reactive</name>
     <description>vtarm 响应式微服务</description>
     <packaging>pom</packaging>
 
