@@ -34,12 +34,11 @@ public class ArticleService {
     }
 
     public Flux<Article> findByAuthor(String author) {
-        Article article = new Article();
-        article.setAuthor(author);
+        Article article = Article.builder().author(author).build();
 
         ExampleMatcher matcher = ExampleMatcher.matching()
                 .withIgnoreCase()
-                .withMatcher(author, ExampleMatcher.GenericPropertyMatchers.startsWith())
+                .withMatcher("author", ExampleMatcher.GenericPropertyMatchers.startsWith())
                 .withIncludeNullValues();
 
         Example<Article> example = Example.of(article, matcher);
@@ -47,6 +46,41 @@ public class ArticleService {
         Flux<Article> articles = articleRepository.findAll(example).log("findByAuthor");
 
         return articles;
+    }
+
+    public Flux<Article> findByCategory(String category) {
+        Article article = Article.builder().category(category).build();
+
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withIgnoreCase()
+                .withMatcher("category", ExampleMatcher.GenericPropertyMatchers.exact())
+                .withIncludeNullValues();
+
+        Example<Article> example = Example.of(article, matcher);
+
+        Flux<Article> articles = articleRepository.findAll(example).log("findByCategory");
+
+        return articles;
+    }
+
+    public Flux<Article> findByColumn(String column) {
+        Article article = Article.builder().column(column).build();
+
+        ExampleMatcher matcher = ExampleMatcher.matching()
+                .withIgnoreCase()
+                .withMatcher("column", ExampleMatcher.GenericPropertyMatchers.exact())
+                .withIncludeNullValues();
+
+        Example<Article> example = Example.of(article, matcher);
+
+        Flux<Article> articles = articleRepository.findAll(example).log("findByColumn");
+
+        return articles;
+    }
+
+    public Flux<Article> findByKeyword(String keyword) {
+        // TODO elasticsearch
+        return Flux.just(Article.builder().title("暂未实现").build());
     }
 
 }
