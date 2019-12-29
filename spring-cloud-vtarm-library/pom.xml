@@ -8,10 +8,10 @@
         <version>2.0.0</version>
     </parent>
     <groupId>com.vteam</groupId>
-    <artifactId>spring-cloud-vtarm-article</artifactId>
+    <artifactId>spring-cloud-vtarm-library</artifactId>
     <version>${spring-cloud-vtarm.version}</version>
-    <name>spring-cloud-vtarm-article</name>
-    <description>文章响应式服务</description>
+    <name>spring-cloud-vtarm-library</name>
+    <description>图书馆响应式服务</description>
 
     <dependencies>
         <dependency>

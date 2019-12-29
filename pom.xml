@@ -6,6 +6,8 @@
     <modules>
         <module>spring-cloud-vtarm-dependencies</module>
         <module>spring-cloud-vtarm-article</module>
+        <module>spring-cloud-vtarm-library</module>
+        <module>spring-cloud-vtarm-gateway</module>
     </modules>
 
     <parent>
