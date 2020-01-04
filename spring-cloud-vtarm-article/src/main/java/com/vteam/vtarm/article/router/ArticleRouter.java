@@ -1,6 +1,6 @@
-package com.vteam.vtarm.article.api.router;
+package com.vteam.vtarm.article.router;
 
-import com.vteam.vtarm.article.api.handler.ArticleHandler;
+import com.vteam.vtarm.article.handler.ArticleHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
@@ -25,7 +25,7 @@ public class ArticleRouter {
                 .andRoute(RequestPredicates.GET("/_column/{column}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), articleHandler::findByColumn)
                 .andRoute(RequestPredicates.GET("/_search/{keyword}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), articleHandler::findByKeyword)
                 .andRoute(RequestPredicates.POST("/").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), articleHandler::save)
-                .andRoute(RequestPredicates.DELETE("/").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), articleHandler::delete);
+                .andRoute(RequestPredicates.DELETE("/{id}").and(RequestPredicates.accept(MediaType.APPLICATION_JSON)), articleHandler::delete);
     }
 
 }

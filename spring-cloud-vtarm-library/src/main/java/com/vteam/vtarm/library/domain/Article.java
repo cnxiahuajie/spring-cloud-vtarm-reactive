@@ -1,4 +1,4 @@
-package com.vteam.vtarm.article.domain;
+package com.vteam.vtarm.library.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
